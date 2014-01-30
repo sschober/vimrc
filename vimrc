@@ -1,6 +1,7 @@
 " pathogen infection {{{
 call pathogen#infect()
 " }}}
+
 " general settings {{{
 set background=dark
 set autoindent
@@ -23,7 +24,7 @@ set bs=2
 " wrap text at 68 characters
 set tw=68
 set enc=utf-8
-set hlsearch
+set hlsearch incsearch
 set modeline
 " Using this has strange effects on copy paste behaviour
 set mouse=a
@@ -57,10 +58,13 @@ nmap h :tabprevious<CR>
 nmap l :tabnext<CR>
 " }}}
 
-cnoremap <Tab> <C-L><C-D>
+" command completion setting <tab> {{{
+cnoremap <tab> <c-l><c-d>
+" }}}
 
-
+" taggle pasting with F12 {{{
 set pastetoggle=<F12>
+" }}}
 
 " shell style completion using TAB-key {{{
 " replaces ^p
@@ -94,11 +98,14 @@ let g:Tex_Env_figure="\\begin{figure}[htpb]\<cr>\\begin{center}\<cr>\\includegra
 
 "}}}
 
+" doxygen settings {{{
 " DoxygenToolkit
 let g:DoxygenToolkit_authorName="Sven Schober <sv3sch@yahoo.de>"
+" }}}
 
-" Changelog
+" changelog setting {{{
 let g:CLAuthor="sschober@sssm.de"
+" }}}
 
 " git filetype settings {{{
 augroup git
@@ -178,4 +185,15 @@ nnoremap OA <nop>
 nnoremap OD <nop>
 nnoremap OC <nop>
 nnoremap OB <nop>
+" }}}
+
+" general fold options {{{
+set foldcolumn=3
+" }}}
+
+" perl folding settings {{{
+let perl_fold=1
+let perl_include_pod=1
+let perl_fold_anonymous_subs=1
+let perl_nofold_packages=1
 " }}}
